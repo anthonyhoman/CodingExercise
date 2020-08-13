@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CodingExercise
 {
@@ -26,8 +29,18 @@ namespace CodingExercise
          */
         static Boolean HasPair(int[] arr)
         {
-            //TODO: Implement HasPair
+            for (int i = 0; i < arr.Length; i++)
+            {
+                var thisI = arr[i];
+                for (int x = i+1; x < arr.Length; x++)
+                {
+                    var nextI = arr[x];
+                    if (nextI == thisI)
+                        return true;
+                }
+            }
             return false;
+
         }
     }
 }
